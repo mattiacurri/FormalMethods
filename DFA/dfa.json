@@ -1,0 +1,12 @@
+{
+    "states": ["q0", "q1", "q2"],
+    "alphabet": ["a", "b"],
+    "transitions": [
+        {"from": "q0", "to": "q1", "input": "a"},
+        {"from": "q0", "to": "q2", "input": "b"},
+        {"from": "q1", "to": "q2", "input": "a"},
+        {"from": "q2", "to": "q1", "input": "b"}
+    ],
+    "initialState": "q0",
+    "acceptStates": ["q1", "q0"]
+}
