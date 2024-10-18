@@ -2,4 +2,4 @@
 
 ## Classes implemented
 
-- [DFA Class](DFA/dfa.py)
+- [DFA Class](https://github.com/mattiacurri/FormalMethods/blob/main/DFA/DFA.py)
