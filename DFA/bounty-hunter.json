@@ -1,0 +1,24 @@
+{
+    "states": [
+      "Idle",
+      "Looking For",
+      "Found",
+      "Chasing",
+      "Fighting",
+      "Claiming Reward"
+    ],
+    "initial_state": "Idle",
+    "transitions": [
+        {"from": "Idle", "to": "Looking For", "input": "I have a new contract"},
+        {"from": "Idle", "to": "Idle", "input": "I have not found a contract"},
+        {"from": "Looking For", "to": "Found", "input": "I have found a target"},
+        {"from": "Looking For", "to": "Idle", "input": "I have not found a target"},
+        {"from": "Found", "to": "Chasing", "input": "engage"},
+        {"from": "Found", "to": "Idle", "input": "not_worth"},
+        {"from": "Chasing", "to": "Fighting", "input": "catch_up"},
+        {"from": "Chasing", "to": "Looking For", "input": "escape"},
+        {"from": "Fighting", "to": "Claiming Reward", "input": "succeed"},
+        {"from": "Fighting", "to": "Chasing", "input": "overpowered"},
+        {"from": "Claiming Reward", "to": "Idle", "input": "collect_bounty"}
+    ]
+}

@@ -162,7 +162,8 @@ class DFA:
             dfa.view()
 
 # Usage
-dfa_handler = DFA("dfa.json")
-print(dfa_handler.generate_random_tests())
-print(dfa_handler.bulk_run(set(['bbaba', 'aaba', 'ab', 'babba', 'aa', 'bb', 'aaa', 'a', 'b', 'aaba', 'aaba', 'b', 'babaa', 'bbbab', 'a', 'bbbba', 'a', 'ab', 'bbbaa', 'a'])))
+dfa_handler = DFA("merchant.json")
 dfa_handler.draw(file_name="dfa_diagram")
+#print(dfa_handler.generate_random_tests())
+#print(dfa_handler.bulk_run(set(['bbaba', 'aaba', 'ab', 'babba', 'aa', 'bb', 'aaa', 'a', 'b', 'aaba', 'aaba', 'b', 'babaa', 'bbbab', 'a', 'bbbba', 'a', 'ab', 'bbbaa', 'a'])))
+#dfa_handler.draw(file_name="dfa_diagram")

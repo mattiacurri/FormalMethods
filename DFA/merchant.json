@@ -1,0 +1,35 @@
+{
+    "alphabet": ["greetings", "see_items", "price_negotiation", "show_respect", "doubt_quality", "more_details", "persist_questioning", "negotiate", "lose_patience", "price_agree", "negotiate_more", "finalize_purchase", "change_mind", "accept_deal"],
+    "states": [
+        "Introduction",
+        "Shop",
+        "Suspicion",
+        "Negotiation",
+        "TrustBuilding",
+        "Last_Try",
+        "FinalOffer",
+        "End"
+    ],
+    "initialState": "Introduction",
+    "transitions": [
+        {"from": "Introduction", "to": "Introduction", "input": "greetings"},
+        {"from": "Introduction", "to": "Shop", "input": "see_items"},
+        {"from": "Shop", "to": "Negotiation", "input": "price_negotiation"},
+        {"from": "Shop", "to": "TrustBuilding", "input": "show_respect"},
+        {"from": "Shop", "to": "Suspicion", "input": "doubt_quality"},
+        {"from": "Suspicion", "to": "Suspicion", "input": "persist_questioning"},
+        {"from": "Suspicion", "to": "Negotiation", "input": "negotiate"},
+        {"from": "Suspicion", "to": "Last_Try", "input": "lose_patience"},
+        {"from": "Last_Try", "to": "End", "input": "lose_patience"},
+        {"from": "Last_Try", "to": "Negotiation", "input": "negotiate"},
+        {"from": "Negotiation", "to": "FinalOffer", "input": "price_agree"},
+        {"from": "Negotiation", "to": "Negotiation", "input": "negotiate_more"},
+        {"from": "Negotiation", "to": "Last_Try", "input": "lose_patience"},
+        {"from": "Negotiation", "to": "Suspicion", "input": "doubt_quality"},
+        {"from": "TrustBuilding", "to": "FinalOffer", "input": "finalize_purchase"},
+        {"from": "TrustBuilding", "to": "Shop", "input": "change_mind"},
+        {"from": "Final Offer", "to": "End", "input": "accept_deal"},
+        {"from": "Final Offer", "to": "Negotiation", "input": "change_mind"}
+    ],
+    "acceptStates": ["End"]
+}
